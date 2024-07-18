@@ -128,6 +128,10 @@ html {
     background: #fff;
     color: #037cb4;
 }
+/* Solid border */
+hr.solid {
+    border-top: 2px solid rgba(250, 250, 250, 0.164);
+  }
 
 /* Sidebar Menu */
 
