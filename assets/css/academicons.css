@@ -479,8 +479,6 @@
 }
 .ai-2x {
   font-size: 2em;
-  line-height: 4em;
-  vertical-align: -25px;
 }
 .ai-3x {
   font-size: 3em;
@@ -564,9 +562,6 @@ border-radius: .1em;
 }
 .ai-stack-1x {
   line-height: inherit;
-}
-.ai-stack-2x {
-  font-size: 2em;
 }
 .ai-inverse {
   color: #fff;
