@@ -151,7 +151,7 @@ html {
 }
 
 .menu .author-content span {
-    font-size: 13px;
+    font-size: 16px;
     font-style: italic;
     color: #fff;
 }
@@ -327,7 +327,7 @@ html {
     padding: 12px 20px;
     background-color: #fff;
     color: #1480a1;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 800;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -344,7 +344,7 @@ button {
     padding: 10px 20px;
     background-color: #fff;
     color: #3f8ca4;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 800;
     letter-spacing: 0.5px;
     text-transform: uppercase;
@@ -489,7 +489,7 @@ section.my-work .section-heading {
     display: inline-block;
     margin-right: 15px;
     padding-bottom: 3px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     border-bottom: 2px solid transparent;
     transform: ease-in-out 0.5s;
@@ -642,7 +642,7 @@ section.contact-me {
     border-radius: 0px;
     margin-bottom: 30px;
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     height: 40px;
     line-height: 40px;
     width: 100%;
@@ -660,7 +660,7 @@ section.contact-me {
     border-radius: 0px;
     margin-bottom: 30px;
     color: #fff;
-    font-size: 14px;
+    font-size: 16px;
     height: 180px;
     max-height: 220px;
     line-height: 40px;
