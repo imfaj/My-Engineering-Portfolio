@@ -358,6 +358,12 @@ hr.solid {
     display: block;
   }
 
+  /* Estilo para el video */
+.slide video {
+    width: 50%; /* Establece el tamaño del video al 70% del contenedor */
+    height: auto; /* Mantiene la relación de aspecto original */
+    object-fit: contain; /* Asegura que el video se ajuste sin recortarse (opcional) */
+  }
 /* Buttons Slider */
 
 /* Botones de navegación */
