@@ -390,6 +390,11 @@ button.prev:hover, button.next:hover {
     background-color: #1480a174; /* Fondo ligeramente visible al pasar el cursor */
     border-color: rgba(255, 255, 255, 1); /* Bordes más visibles al pasar el cursor */
   }
+  /* Estado boton slider cuando el botón está en foco (seleccionado) */
+button:focus {
+    outline: none; /* Elimina el borde de enfoque predeterminado */
+    background-color: transparent; /* Establece un fondo diferente cuando el botón tiene foco */
+}
 
 .white-button a {
     display: inline-block;
