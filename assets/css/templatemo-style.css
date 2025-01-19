@@ -331,7 +331,41 @@ hr.solid {
     border-bottom: 3px solid rgba(250, 250, 250, 0.25); /* Línea de 3px de grosor */
 }
 
+/* Estilos para el contenedor del slider */
+.slider-container {
+    width: 100%; /* El slider ocupará el 100% del ancho */
+    max-width: 800px; /* Limita el tamaño máximo */
+    margin: 0 auto; /* Centra el slider */
+    position: relative;
+    overflow: hidden; /* Oculta las imágenes que no están en el área visible */
+}
+
+/* Estilos para la fila de imágenes */
+.slider {
+    display: flex; /* Las imágenes estarán alineadas horizontalmente */
+    transition: transform 0.5s ease-in-out; /* Transición suave al cambiar de imagen */
+    width: 100%; /* Asegura que el contenedor tenga el 100% del ancho */
+}
+
+/* Estilo para cada imagen del slider */
+.slide {
+    width: 100%; /* Cada imagen ocupa el 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    flex-shrink: 0; /* Previene que las imágenes se reduzcan en tamaño */
+}
+
+
 /* Buttons */
+
+/* Botón de "prev" (anterior) a la izquierda */
+.prev {
+    left: 10px;
+}
+
+/* Botón de "next" (siguiente) a la derecha */
+.next {
+    right: 10px;
+}
 
 .white-button a {
     display: inline-block;
