@@ -3,37 +3,62 @@
   var menu = document.getElementById("menu");
   var close = document.getElementById("menu-close");
   /*Para Slider */
-  let currentIndex = 0;
   const slides = document.querySelectorAll('.slide');
-  const totalSlides = slides.length;
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+  let currentIndex = 0;
+  let autoSlide;
   /*FIN Para Slider */
 
   /*INICIO PARA SLIDER */
-    // Muestra la imagen en el índice actual
+  // Mostrar la imagen actual
   function showSlide(index) {
-    // Asegúrate de que el índice esté dentro de los límites
-    if (index >= totalSlides) {
-        currentIndex = 0; // Volver al inicio si estamos al final
-    } else if (index < 0) {
-        currentIndex = totalSlides - 1; // Volver al final si estamos al principio
-    } else {
-        currentIndex = index;
-    }
-
-    // Cambia la posición del slider para mostrar la imagen correspondiente
-    const slider = document.querySelector('.slider');
-    slider.style.transform = `translateX(-${currentIndex * 100}%)`; // Desplaza las imágenes horizontalmente
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) {
+        slide.classList.add('active');
+      }
+    });
   }
 
-  // Cambia la imagen cuando se hace clic en los botones
-  function changeSlide(direction) {
-    showSlide(currentIndex + direction); // Aumenta o disminuye el índice
+  // Cambiar a la siguiente imagen
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length;
+    showSlide(currentIndex);
   }
 
-  // Inicializa el slider mostrando la primera imagen
-  document.addEventListener('DOMContentLoaded', () => {
-    showSlide(currentIndex); // Muestra la primera imagen al cargar
+  // Cambiar a la imagen anterior
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+  }
+
+  // Configurar el auto-slide
+  function startAutoSlide() {
+    autoSlide = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
+  }
+
+  // Detener el auto-slide
+  function stopAutoSlide() {
+    clearInterval(autoSlide);
+  }
+
+  // Inicializar eventos
+  nextBtn.addEventListener('click', () => {
+    stopAutoSlide();
+    nextSlide();
+    startAutoSlide();
   });
+
+  prevBtn.addEventListener('click', () => {
+    stopAutoSlide();
+    prevSlide();
+    startAutoSlide();
+  });
+
+  // Iniciar el slider
+  showSlide(currentIndex);
+  startAutoSlide();
   /*FINAL Para Slider */
 
 
