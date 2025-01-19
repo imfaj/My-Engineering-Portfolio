@@ -358,17 +358,37 @@ hr.solid {
     display: block;
   }
 
-/* Buttons */
+/* Buttons Slider */
 
-/* Botón de "prev" (anterior) a la izquierda */
+/* Botones de navegación */
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent; /* Fondo completamente transparente */
+    color: white; /* Color del texto o ícono */
+    border: 2px solid rgba(255, 255, 255, 0.7); /* Bordes semitransparentes */
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10; /* Asegura que estén por encima de las imágenes */
+    transition: all 0.3s ease; /* Efecto suave al pasar el cursor */
+  }
+
+/* Botón Slider de "prev" (anterior) a la izquierda */
 .prev {
     left: 10px;
 }
 
-/* Botón de "next" (siguiente) a la derecha */
+/* Botón Slider de "next" (siguiente) a la derecha */
 .next {
     right: 10px;
 }
+/* Efecto boton slider al pasar el cursor */
+button.prev:hover, button.next:hover {
+    background-color: #1480a1; /* Fondo ligeramente visible al pasar el cursor */
+    border-color: rgba(255, 255, 255, 1); /* Bordes más visibles al pasar el cursor */
+  }
 
 .white-button a {
     display: inline-block;

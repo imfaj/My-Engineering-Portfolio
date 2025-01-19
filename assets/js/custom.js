@@ -2,63 +2,71 @@
   var toggle = document.getElementById("menu-toggle");
   var menu = document.getElementById("menu");
   var close = document.getElementById("menu-close");
+
   /*Para Slider */
-  const slides = document.querySelectorAll('.slide');
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
-  let currentIndex = 0;
-  let autoSlide;
+  function initializeSlider(sliderElement) {
+    const slides = sliderElement.querySelectorAll('.slide');
+    const prevBtn = sliderElement.querySelector('.prev');
+    const nextBtn = sliderElement.querySelector('.next');
+    let currentIndex = 0;
+    let autoSlide;
   /*FIN Para Slider */
 
   /*INICIO PARA SLIDER */
-  // Mostrar la imagen actual
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove('active');
-      if (i === index) {
-        slide.classList.add('active');
+      // Mostrar la imagen actual
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove('active');
+          if (i === index) {
+            slide.classList.add('active');
+          }
+        });
       }
+
+      // Avanzar al siguiente slide
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length; // Ciclo continuo
+        showSlide(currentIndex);
+      }
+
+      // Retroceder al slide anterior
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+      }
+
+      // Configurar el auto-slide
+      function startAutoSlide() {
+        autoSlide = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
+      }
+
+      // Detener el auto-slide
+      function stopAutoSlide() {
+        clearInterval(autoSlide);
+      }
+
+      // Eventos de los botones
+      nextBtn.addEventListener('click', () => {
+        stopAutoSlide();
+        nextSlide();
+        startAutoSlide();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        stopAutoSlide();
+        prevSlide();
+        startAutoSlide();
+      });
+
+      // Iniciar el slider
+      showSlide(currentIndex);
+      startAutoSlide();
+    }
+
+    // Inicializar todos los sliders
+    document.querySelectorAll('.slider').forEach(slider => {
+      initializeSlider(slider);
     });
-  }
-
-  // Cambiar a la siguiente imagen
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-  }
-
-  // Cambiar a la imagen anterior
-  function prevSlide() {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    showSlide(currentIndex);
-  }
-
-  // Configurar el auto-slide
-  function startAutoSlide() {
-    autoSlide = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
-  }
-
-  // Detener el auto-slide
-  function stopAutoSlide() {
-    clearInterval(autoSlide);
-  }
-
-  // Inicializar eventos
-  nextBtn.addEventListener('click', () => {
-    stopAutoSlide();
-    nextSlide();
-    startAutoSlide();
-  });
-
-  prevBtn.addEventListener('click', () => {
-    stopAutoSlide();
-    prevSlide();
-    startAutoSlide();
-  });
-
-  // Iniciar el slider
-  showSlide(currentIndex);
-  startAutoSlide();
   /*FINAL Para Slider */
 
 
